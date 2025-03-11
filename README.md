@@ -26,6 +26,7 @@ https://geeeeeeeek.github.io/web_tool/
 - https://web-a55.pages.dev/
 
 - https://hrzhanghuan.com
+- 
 Hugo-Webstack网址导航网站构建模板
 
 完整的hugo目录结构，可以直接拷贝使用，不需要本地生成。结合自动构建，可在线编辑，自动发布。
