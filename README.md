@@ -31,59 +31,63 @@ https://geeeeeeeek.github.io/web_tool/
 
 完整的hugo目录结构，可以直接拷贝使用，不需要本地生成。结合自动构建，可在线编辑，自动发布。
 
-详细内容请看主题 hugo-webstack
+详细内容请看主题 [hugo-webstack](https://github.com/oulh/hugo-webstack)
 
-访问链接：oulh.github.io/nav
-使用方法
+访问链接：[oulh.github.io/nav](https://oulh.github.io/nav/)
 
-自动构建平台推荐，Github Pages 、vercel（要用自己的域名）、netlify 、zeabur（国内平台，提供域名） 。
+## 使用方法
+
+自动构建平台推荐，`Github Pages` 、[vercel](https://vercel.com/)（要用自己的域名）、[netlify](https://www.netlify.com/) 、[zeabur](https://zeabur.com?referralCode=o1289)（国内平台，提供域名） 。
 
 这里介绍 Github Pages 的方法：
 
-    导入或 Fork 本项目
+1. 导入或 Fork 本项目
 
-    Github Pages 设置
+2. Github Pages 设置
 
-    Github Action 设置
+   ![](https://raw.githubusercontent.com/oulh/nav/main/static/images/gh-pages.jpg)
 
-    如果是导入的：Settings - Actions - General - Allow all actions and reusable workflows
+3. Github Action 设置
+   
+   如果是导入的：Settings - Actions - General - Allow all actions and reusable workflows
+   
+   如果是Fork的：Actions - "I understand my workflows, go ahead and enable them"
 
-    如果是Fork的：Actions - "I understand my workflows, go ahead and enable them"
+4. 编辑自己的网站内容并Commit，每次提交修改都会触发自动构建。
+   
+   可自定义编辑的内容：
+   
+   - 网站配置：/hugo.toml
 
-    编辑自己的网站内容并Commit，每次提交修改都会触发自动构建。
+   - 主页面：/data/webstack.yml
 
-    可自定义编辑的内容：
+   - 子页面：/content/xxx.md
 
-        网站配置：/hugo.toml
+   - “关于”页面：/content/about.md
+   
+   - 网站logo：/static/images/logo.png
+   
+   - 导航网址默认logo：/static/images/favicon.png
+   
+   - 导航网址logo：/static/images/logos/（可自定义路径）
+   
+   - 导航网址二维码：/static/images/qrcodes/（可自定义路径）
+   
+   查看构建状态：Actions - All workflows
 
-        主页面：/data/webstack.yml
+   如何希望提交后不触发构建，只需在 commit 信息中包含关键词：`[skip ci]`或`[no ci]`，包括[]符号。
+   
+5. 访问页面
 
-        子页面：/content/xxx.md
+   你的站点链接是：https://用户名.github.io/仓库名
 
-        “关于”页面：/content/about.md
+## 附：webstack.yml
 
-        网站logo：/static/images/logo.png
-
-        导航网址默认logo：/static/images/favicon.png
-
-        导航网址logo：/static/images/logos/（可自定义路径）
-
-        导航网址二维码：/static/images/qrcodes/（可自定义路径）
-
-    查看构建状态：Actions - All workflows
-
-    如何希望提交后不触发构建，只需在 commit 信息中包含关键词：[skip ci]或[no ci]，包括[]符号。
-
-    访问页面
-
-    你的站点链接是：https://用户名.github.io/仓库名
-
-附：webstack.yml
-
-可以复制以下配置，替换 webstack.yml 原有的内容，更方便修改编辑自己的内容。记得带上"---"符号
+可以复制以下配置，替换 [webstack.yml](https://github.com/oulh/nav/blob/main/data/webstack.yml) 原有的内容，更方便修改编辑自己的内容。记得带上"---"符号
 
 title和url是必要属性，logo、description、qrcode可留空或删除。
 
+```yaml
 ---
 - taxonomy: 常用工具
   icon: fa-star
@@ -154,4 +158,4 @@ title和url是必要属性，logo、description、qrcode可留空或删除。
       url: https://qssily.com/
       
 ---
-
+```
